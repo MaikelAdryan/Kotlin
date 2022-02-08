@@ -1,13 +1,10 @@
-//dsti = distancia inicial, dstf = distancia final
-//tmpi = tempo inicial,tmpf = tempo final
-//vlci = velocidade inicial, vlcf = velocidade final
-
 class Calculos {
     fun forcaPeso(massa: Float, gravidade: Float): Float = massa * gravidade
     fun forcaCentripeta(massa: Float, raio: Float, velocidade: Float): Float = massa * ((velocidade * velocidade) / raio)
-    fun impulso(forca: Double, massa: Double, vlci: Double, vlcf: Double): Double = ((vlcf - vlci) * massa) / forca
+    fun impulso(forca: Double, tempoFinal: Double, tempoInicial: Double): Double = (tempoFinal - tempoInicial) * forca
     fun forcaElastica(constante: Float, deformacao: Float): Float = constante * deformacao
-    fun velocidadeMedia(distancia: Double, tempo: Double): Double = distancia / tempo
-    fun mru(dsti: Double, dstf: Double, tmpi: Double, tmpf: Double): Double = (dstf - dsti) / (tmpf - tmpi)
-    fun mruv(vldi: Double, aceleracao: Double, instante: Double): Double = (vldi + aceleracao) * instante
+    fun velocidadeMedia(destinoInicial: Double, destinoFinal: Double, tempoInicial: Double, tempoFinal: Double): Double = (destinoFinal - destinoInicial) / (tempoFinal - tempoInicial)
+    fun mru(velocidade: Double, tempo: Double): Double = velocidade * tempo
+    fun mruv(velocidadeInicial: Double, aceleracao: Double, instante: Double): Double = (velocidadeInicial + aceleracao) * instante
 }
+
